@@ -1,0 +1,2802 @@
+[
+  {
+    "day": 1,
+    "focus": "Want / don't want",
+    "sentences": [
+      {
+        "tamil": "Enakku ___ venum.",
+        "english": "I want/need ___"
+      },
+      {
+        "tamil": "Enakku ___ vendaam.",
+        "english": "I don't want ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "thanni",
+        "english": "water"
+      },
+      {
+        "tamil": "saapadu",
+        "english": "food/meal"
+      },
+      {
+        "tamil": "kaapi",
+        "english": "coffee"
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "focus": "This / that",
+    "sentences": [
+      {
+        "tamil": "Idhu ___.",
+        "english": "This is ___"
+      },
+      {
+        "tamil": "Adhu ___.",
+        "english": "That is ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "idhu",
+        "english": "this"
+      },
+      {
+        "tamil": "adhu",
+        "english": "that"
+      },
+      {
+        "tamil": "nalla",
+        "english": "good"
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "focus": "I am / I am not",
+    "sentences": [
+      {
+        "tamil": "Naan ___.",
+        "english": "I am ___"
+      },
+      {
+        "tamil": "Naan ___ illa.",
+        "english": "I am not ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "naan",
+        "english": "I"
+      },
+      {
+        "tamil": "neenga",
+        "english": "you"
+      },
+      {
+        "tamil": "seri",
+        "english": "okay"
+      }
+    ]
+  },
+  {
+    "day": 4,
+    "focus": "Questions: what / who",
+    "sentences": [
+      {
+        "tamil": "Idhu enna?",
+        "english": "What is this?"
+      },
+      {
+        "tamil": "Avanga yaaru?",
+        "english": "Who are they?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "enna",
+        "english": "what"
+      },
+      {
+        "tamil": "yaaru",
+        "english": "who"
+      },
+      {
+        "tamil": "avanga",
+        "english": "he/she/they respectful"
+      }
+    ]
+  },
+  {
+    "day": 5,
+    "focus": "Location",
+    "sentences": [
+      {
+        "tamil": "___ enga irukku?",
+        "english": "Where is ___?"
+      },
+      {
+        "tamil": "___ inga irukku.",
+        "english": "___ is here"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "enga",
+        "english": "where"
+      },
+      {
+        "tamil": "inga",
+        "english": "here"
+      },
+      {
+        "tamil": "anga",
+        "english": "there"
+      }
+    ]
+  },
+  {
+    "day": 6,
+    "focus": "Have / don't have",
+    "sentences": [
+      {
+        "tamil": "En kitta ___ irukku.",
+        "english": "I have ___"
+      },
+      {
+        "tamil": "En kitta ___ illa.",
+        "english": "I don't have ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "kaasu",
+        "english": "money"
+      },
+      {
+        "tamil": "phone",
+        "english": "phone"
+      },
+      {
+        "tamil": "neram",
+        "english": "time"
+      }
+    ]
+  },
+  {
+    "day": 7,
+    "focus": "Need help",
+    "sentences": [
+      {
+        "tamil": "Enakku help venum.",
+        "english": "I need help"
+      },
+      {
+        "tamil": "Konjam help pannunga.",
+        "english": "Please help a little"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "help",
+        "english": "help"
+      },
+      {
+        "tamil": "konjam",
+        "english": "little"
+      },
+      {
+        "tamil": "pannunga",
+        "english": "please do"
+      }
+    ]
+  },
+  {
+    "day": 8,
+    "focus": "Can / cannot",
+    "sentences": [
+      {
+        "tamil": "Naan ___ panna mudiyum.",
+        "english": "I can do ___"
+      },
+      {
+        "tamil": "Naan ___ panna mudiyadhu.",
+        "english": "I cannot do ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "panna",
+        "english": "to do"
+      },
+      {
+        "tamil": "mudiyum",
+        "english": "can"
+      },
+      {
+        "tamil": "mudiyadhu",
+        "english": "cannot"
+      }
+    ]
+  },
+  {
+    "day": 9,
+    "focus": "Like / don't like",
+    "sentences": [
+      {
+        "tamil": "Enakku ___ pidikkum.",
+        "english": "I like ___"
+      },
+      {
+        "tamil": "Enakku ___ pidikkadhu.",
+        "english": "I don't like ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "tea",
+        "english": "tea"
+      },
+      {
+        "tamil": "paal",
+        "english": "milk"
+      },
+      {
+        "tamil": "sakkarai",
+        "english": "sugar"
+      }
+    ]
+  },
+  {
+    "day": 10,
+    "focus": "Polite requests",
+    "sentences": [
+      {
+        "tamil": "___ kudunga.",
+        "english": "Please give ___"
+      },
+      {
+        "tamil": "___ konjam kudunga.",
+        "english": "Please give a little ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "kudunga",
+        "english": "give please"
+      },
+      {
+        "tamil": "oru",
+        "english": "one/a"
+      },
+      {
+        "tamil": "bill",
+        "english": "bill"
+      }
+    ]
+  },
+  {
+    "day": 11,
+    "focus": "Eating",
+    "sentences": [
+      {
+        "tamil": "Naan saapdaren.",
+        "english": "I am eating / I eat"
+      },
+      {
+        "tamil": "Neenga saaptingala?",
+        "english": "Did you eat?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "saapdu",
+        "english": "eat"
+      },
+      {
+        "tamil": "dosai",
+        "english": "dosa"
+      },
+      {
+        "tamil": "idli",
+        "english": "idli"
+      }
+    ]
+  },
+  {
+    "day": 12,
+    "focus": "Drinking",
+    "sentences": [
+      {
+        "tamil": "Naan ___ kudikkaren.",
+        "english": "I drink/am drinking ___"
+      },
+      {
+        "tamil": "Neenga ___ kudippingala?",
+        "english": "Will you drink ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "kudi",
+        "english": "drink"
+      },
+      {
+        "tamil": "juice",
+        "english": "juice"
+      },
+      {
+        "tamil": "soup",
+        "english": "soup"
+      }
+    ]
+  },
+  {
+    "day": 13,
+    "focus": "Going",
+    "sentences": [
+      {
+        "tamil": "Naan ___ poren.",
+        "english": "I am going to ___"
+      },
+      {
+        "tamil": "Neenga enga poringa?",
+        "english": "Where are you going?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "po",
+        "english": "go"
+      },
+      {
+        "tamil": "veedu",
+        "english": "home/house"
+      },
+      {
+        "tamil": "velai",
+        "english": "work/job"
+      }
+    ]
+  },
+  {
+    "day": 14,
+    "focus": "Coming",
+    "sentences": [
+      {
+        "tamil": "Naan ___ varen.",
+        "english": "I am coming to ___"
+      },
+      {
+        "tamil": "Neenga eppo varinga?",
+        "english": "When are you coming?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "vaa",
+        "english": "come"
+      },
+      {
+        "tamil": "eppo",
+        "english": "when"
+      },
+      {
+        "tamil": "ippo",
+        "english": "now"
+      }
+    ]
+  },
+  {
+    "day": 15,
+    "focus": "Doing",
+    "sentences": [
+      {
+        "tamil": "Naan ___ panren.",
+        "english": "I am doing ___"
+      },
+      {
+        "tamil": "Neenga enna panringa?",
+        "english": "What are you doing?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "velai",
+        "english": "work"
+      },
+      {
+        "tamil": "clean",
+        "english": "clean"
+      },
+      {
+        "tamil": "study",
+        "english": "study"
+      }
+    ]
+  },
+  {
+    "day": 16,
+    "focus": "Giving",
+    "sentences": [
+      {
+        "tamil": "Naan ___ kudukkaren.",
+        "english": "I am giving ___"
+      },
+      {
+        "tamil": "Neenga ___ kudukkingala?",
+        "english": "Will you give ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "kudukka",
+        "english": "to give"
+      },
+      {
+        "tamil": "book",
+        "english": "book"
+      },
+      {
+        "tamil": "key",
+        "english": "key"
+      }
+    ]
+  },
+  {
+    "day": 17,
+    "focus": "Taking",
+    "sentences": [
+      {
+        "tamil": "Naan ___ edukkaren.",
+        "english": "I am taking ___"
+      },
+      {
+        "tamil": "___ edukkalama?",
+        "english": "May I take ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "edukka",
+        "english": "take"
+      },
+      {
+        "tamil": "bag",
+        "english": "bag"
+      },
+      {
+        "tamil": "photo",
+        "english": "photo"
+      }
+    ]
+  },
+  {
+    "day": 18,
+    "focus": "Buying",
+    "sentences": [
+      {
+        "tamil": "Naan ___ vaangaren.",
+        "english": "I am buying ___"
+      },
+      {
+        "tamil": "Idhu evlo?",
+        "english": "How much is this?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "vaangu",
+        "english": "buy"
+      },
+      {
+        "tamil": "evlo",
+        "english": "how much"
+      },
+      {
+        "tamil": "cheap",
+        "english": "cheap"
+      }
+    ]
+  },
+  {
+    "day": 19,
+    "focus": "Seeing",
+    "sentences": [
+      {
+        "tamil": "Naan ___ paakaren.",
+        "english": "I am seeing/watching ___"
+      },
+      {
+        "tamil": "Neenga ___ paathingala?",
+        "english": "Did you see ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "paaku",
+        "english": "see/watch"
+      },
+      {
+        "tamil": "padam",
+        "english": "movie"
+      },
+      {
+        "tamil": "video",
+        "english": "video"
+      }
+    ]
+  },
+  {
+    "day": 20,
+    "focus": "Speaking",
+    "sentences": [
+      {
+        "tamil": "Naan Tamil pesaren.",
+        "english": "I speak/am speaking Tamil"
+      },
+      {
+        "tamil": "Konjam slow-aa pesunga.",
+        "english": "Please speak slowly"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "pesu",
+        "english": "speak"
+      },
+      {
+        "tamil": "Tamil",
+        "english": "Tamil"
+      },
+      {
+        "tamil": "slow-aa",
+        "english": "slowly"
+      }
+    ]
+  },
+  {
+    "day": 21,
+    "focus": "Understanding",
+    "sentences": [
+      {
+        "tamil": "Enakku puriyudhu.",
+        "english": "I understand"
+      },
+      {
+        "tamil": "Enakku puriyala.",
+        "english": "I don't understand"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "puriyudhu",
+        "english": "understand"
+      },
+      {
+        "tamil": "puriyala",
+        "english": "don't understand"
+      },
+      {
+        "tamil": "again",
+        "english": "again"
+      }
+    ]
+  },
+  {
+    "day": 22,
+    "focus": "Knowing",
+    "sentences": [
+      {
+        "tamil": "Enakku theriyum.",
+        "english": "I know"
+      },
+      {
+        "tamil": "Enakku theriyadhu.",
+        "english": "I don't know"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "theriyum",
+        "english": "know"
+      },
+      {
+        "tamil": "theriyadhu",
+        "english": "don't know"
+      },
+      {
+        "tamil": "question",
+        "english": "question"
+      }
+    ]
+  },
+  {
+    "day": 23,
+    "focus": "Asking",
+    "sentences": [
+      {
+        "tamil": "Naan oru question kekkalaama?",
+        "english": "May I ask a question?"
+      },
+      {
+        "tamil": "Neenga ___ kekkuringala?",
+        "english": "Are you asking ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "kelu",
+        "english": "ask/listen"
+      },
+      {
+        "tamil": "badil",
+        "english": "answer"
+      },
+      {
+        "tamil": "oru nimisham",
+        "english": "one minute"
+      }
+    ]
+  },
+  {
+    "day": 24,
+    "focus": "Saying",
+    "sentences": [
+      {
+        "tamil": "Naan ___ solren.",
+        "english": "I am saying ___"
+      },
+      {
+        "tamil": "Neenga enna sonninga?",
+        "english": "What did you say?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "sol",
+        "english": "say/tell"
+      },
+      {
+        "tamil": "correct",
+        "english": "correct"
+      },
+      {
+        "tamil": "wrong",
+        "english": "wrong"
+      }
+    ]
+  },
+  {
+    "day": 25,
+    "focus": "Time",
+    "sentences": [
+      {
+        "tamil": "Ippo ___ mani.",
+        "english": "Now it is ___ o'clock"
+      },
+      {
+        "tamil": "Eppo start pannalaam?",
+        "english": "When can we start?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "mani",
+        "english": "o'clock"
+      },
+      {
+        "tamil": "kaalai",
+        "english": "morning"
+      },
+      {
+        "tamil": "saayantharam",
+        "english": "evening"
+      }
+    ]
+  },
+  {
+    "day": 26,
+    "focus": "Today / tomorrow",
+    "sentences": [
+      {
+        "tamil": "Innikki naan ___ poren.",
+        "english": "Today I am going to ___"
+      },
+      {
+        "tamil": "Naalaikku naan ___ panren.",
+        "english": "Tomorrow I will do ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "innikku",
+        "english": "today"
+      },
+      {
+        "tamil": "naalaikku",
+        "english": "tomorrow"
+      },
+      {
+        "tamil": "nethu",
+        "english": "yesterday"
+      }
+    ]
+  },
+  {
+    "day": 27,
+    "focus": "Past actions",
+    "sentences": [
+      {
+        "tamil": "Naan ___ panninen.",
+        "english": "I did ___"
+      },
+      {
+        "tamil": "Neenga ___ pannengala?",
+        "english": "Did you do ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "panninen",
+        "english": "I did"
+      },
+      {
+        "tamil": "pannengala",
+        "english": "did you do"
+      },
+      {
+        "tamil": "mudichachu",
+        "english": "finished"
+      }
+    ]
+  },
+  {
+    "day": 28,
+    "focus": "Future actions",
+    "sentences": [
+      {
+        "tamil": "Naan ___ pannuven.",
+        "english": "I will do ___"
+      },
+      {
+        "tamil": "Neenga ___ pannuveengala?",
+        "english": "Will you do ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "pannuven",
+        "english": "I will do"
+      },
+      {
+        "tamil": "apram",
+        "english": "later/then"
+      },
+      {
+        "tamil": "seekiram",
+        "english": "quickly/soon"
+      }
+    ]
+  },
+  {
+    "day": 29,
+    "focus": "Negative present",
+    "sentences": [
+      {
+        "tamil": "Naan ___ panna maaten.",
+        "english": "I won't do ___"
+      },
+      {
+        "tamil": "Naan ___ panna poradhilla.",
+        "english": "I am not going to do ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "maaten",
+        "english": "I won't"
+      },
+      {
+        "tamil": "illa",
+        "english": "no/not"
+      },
+      {
+        "tamil": "poradhilla",
+        "english": "not going to"
+      }
+    ]
+  },
+  {
+    "day": 30,
+    "focus": "Habit",
+    "sentences": [
+      {
+        "tamil": "Naan daily ___ panren.",
+        "english": "I do ___ daily"
+      },
+      {
+        "tamil": "Neenga daily ___ panringala?",
+        "english": "Do you do ___ daily?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "daily",
+        "english": "daily"
+      },
+      {
+        "tamil": "rendu",
+        "english": "two"
+      },
+      {
+        "tamil": "moonnu",
+        "english": "three"
+      }
+    ]
+  },
+  {
+    "day": 31,
+    "focus": "Family",
+    "sentences": [
+      {
+        "tamil": "Ivar en ___ .",
+        "english": "This person is my ___"
+      },
+      {
+        "tamil": "En ___ inga irukanga.",
+        "english": "My ___ is here"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "amma",
+        "english": "mother"
+      },
+      {
+        "tamil": "appa",
+        "english": "father"
+      },
+      {
+        "tamil": "annan",
+        "english": "elder brother"
+      }
+    ]
+  },
+  {
+    "day": 32,
+    "focus": "More family",
+    "sentences": [
+      {
+        "tamil": "Enakku ___ irukku.",
+        "english": "I have ___"
+      },
+      {
+        "tamil": "Ungalukku ___ irukka?",
+        "english": "Do you have ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "akka",
+        "english": "elder sister"
+      },
+      {
+        "tamil": "thambi",
+        "english": "younger brother"
+      },
+      {
+        "tamil": "thangachi",
+        "english": "younger sister"
+      }
+    ]
+  },
+  {
+    "day": 33,
+    "focus": "People",
+    "sentences": [
+      {
+        "tamil": "Avanga romba nallavanga.",
+        "english": "They are very good"
+      },
+      {
+        "tamil": "Avar enga friend.",
+        "english": "He is my friend"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "friend",
+        "english": "friend"
+      },
+      {
+        "tamil": "paiyan",
+        "english": "boy"
+      },
+      {
+        "tamil": "ponnu",
+        "english": "girl"
+      }
+    ]
+  },
+  {
+    "day": 34,
+    "focus": "Feelings",
+    "sentences": [
+      {
+        "tamil": "Enakku ___ aa irukku.",
+        "english": "I feel ___"
+      },
+      {
+        "tamil": "Neenga ___ aa irukkingala?",
+        "english": "Are you feeling ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "sandhosham",
+        "english": "happy"
+      },
+      {
+        "tamil": "kashtam",
+        "english": "difficult/sad"
+      },
+      {
+        "tamil": "bayam",
+        "english": "fear"
+      }
+    ]
+  },
+  {
+    "day": 35,
+    "focus": "Health",
+    "sentences": [
+      {
+        "tamil": "Enakku ___ vali.",
+        "english": "I have ___ pain"
+      },
+      {
+        "tamil": "Enakku udambu sari illa.",
+        "english": "I am not feeling well"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "thalai",
+        "english": "head"
+      },
+      {
+        "tamil": "vayiru",
+        "english": "stomach"
+      },
+      {
+        "tamil": "vali",
+        "english": "pain"
+      }
+    ]
+  },
+  {
+    "day": 36,
+    "focus": "Tired / hungry",
+    "sentences": [
+      {
+        "tamil": "Enakku pasikkudhu.",
+        "english": "I am hungry"
+      },
+      {
+        "tamil": "Enakku thoongudhu.",
+        "english": "I feel sleepy"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "pasi",
+        "english": "hunger"
+      },
+      {
+        "tamil": "thookkam",
+        "english": "sleep"
+      },
+      {
+        "tamil": "tired",
+        "english": "tired"
+      }
+    ]
+  },
+  {
+    "day": 37,
+    "focus": "Size / amount",
+    "sentences": [
+      {
+        "tamil": "Idhu romba ___ .",
+        "english": "This is very ___"
+      },
+      {
+        "tamil": "Konjam ___ venum.",
+        "english": "I need a little ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "perusa",
+        "english": "big"
+      },
+      {
+        "tamil": "chinna",
+        "english": "small"
+      },
+      {
+        "tamil": "romba",
+        "english": "very"
+      }
+    ]
+  },
+  {
+    "day": 38,
+    "focus": "Quality",
+    "sentences": [
+      {
+        "tamil": "Idhu nalla irukku.",
+        "english": "This is good"
+      },
+      {
+        "tamil": "Idhu nalla illa.",
+        "english": "This is not good"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "super",
+        "english": "great"
+      },
+      {
+        "tamil": "sumaar",
+        "english": "okay/average"
+      },
+      {
+        "tamil": "mosam",
+        "english": "bad"
+      }
+    ]
+  },
+  {
+    "day": 39,
+    "focus": "Hot / cold",
+    "sentences": [
+      {
+        "tamil": "Idhu sooda irukku.",
+        "english": "This is hot"
+      },
+      {
+        "tamil": "Idhu kuliraa irukku.",
+        "english": "This is cold"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "soodu",
+        "english": "heat/hot"
+      },
+      {
+        "tamil": "kulir",
+        "english": "cold"
+      },
+      {
+        "tamil": "fresh",
+        "english": "fresh"
+      }
+    ]
+  },
+  {
+    "day": 40,
+    "focus": "Directions",
+    "sentences": [
+      {
+        "tamil": "___ enga poganum?",
+        "english": "Which way to ___?"
+      },
+      {
+        "tamil": "Straight-aa ponga.",
+        "english": "Go straight"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "left",
+        "english": "left"
+      },
+      {
+        "tamil": "right",
+        "english": "right"
+      },
+      {
+        "tamil": "straight-aa",
+        "english": "straight"
+      }
+    ]
+  },
+  {
+    "day": 41,
+    "focus": "Transport",
+    "sentences": [
+      {
+        "tamil": "Naan auto-la poren.",
+        "english": "I am going by auto"
+      },
+      {
+        "tamil": "___ ku bus irukka?",
+        "english": "Is there a bus to ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "auto",
+        "english": "auto-rickshaw"
+      },
+      {
+        "tamil": "bus",
+        "english": "bus"
+      },
+      {
+        "tamil": "train",
+        "english": "train"
+      }
+    ]
+  },
+  {
+    "day": 42,
+    "focus": "Places",
+    "sentences": [
+      {
+        "tamil": "Naan ___ ku poren.",
+        "english": "I am going to ___"
+      },
+      {
+        "tamil": "___ inga pakkathula irukka?",
+        "english": "Is ___ nearby?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "shop",
+        "english": "shop"
+      },
+      {
+        "tamil": "market",
+        "english": "market"
+      },
+      {
+        "tamil": "hospital",
+        "english": "hospital"
+      }
+    ]
+  },
+  {
+    "day": 43,
+    "focus": "Nearby / far",
+    "sentences": [
+      {
+        "tamil": "Idhu pakkathula irukku.",
+        "english": "This is nearby"
+      },
+      {
+        "tamil": "Adhu dhooramaa irukku.",
+        "english": "That is far"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "pakkathula",
+        "english": "nearby"
+      },
+      {
+        "tamil": "dhooram",
+        "english": "far/distance"
+      },
+      {
+        "tamil": "road",
+        "english": "road"
+      }
+    ]
+  },
+  {
+    "day": 44,
+    "focus": "Price",
+    "sentences": [
+      {
+        "tamil": "Idhu romba costly.",
+        "english": "This is very costly"
+      },
+      {
+        "tamil": "Konjam kammi pannunga.",
+        "english": "Please reduce a little"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "costly",
+        "english": "expensive"
+      },
+      {
+        "tamil": "kammi",
+        "english": "less/reduce"
+      },
+      {
+        "tamil": "rate",
+        "english": "price/rate"
+      }
+    ]
+  },
+  {
+    "day": 45,
+    "focus": "Ordering food",
+    "sentences": [
+      {
+        "tamil": "Enakku ___ parcel venum.",
+        "english": "I want ___ parcel/takeaway"
+      },
+      {
+        "tamil": "Inga saapdalaama?",
+        "english": "Can we eat here?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "parcel",
+        "english": "takeaway"
+      },
+      {
+        "tamil": "sambar",
+        "english": "sambar"
+      },
+      {
+        "tamil": "chutney",
+        "english": "chutney"
+      }
+    ]
+  },
+  {
+    "day": 46,
+    "focus": "Restaurant questions",
+    "sentences": [
+      {
+        "tamil": "Menu kudunga.",
+        "english": "Please give the menu"
+      },
+      {
+        "tamil": "Idhula enna irukku?",
+        "english": "What is in this?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "menu",
+        "english": "menu"
+      },
+      {
+        "tamil": "spicy",
+        "english": "spicy"
+      },
+      {
+        "tamil": "salt",
+        "english": "salt"
+      }
+    ]
+  },
+  {
+    "day": 47,
+    "focus": "Preferences",
+    "sentences": [
+      {
+        "tamil": "Enakku spicy vendaam.",
+        "english": "I don't want spicy"
+      },
+      {
+        "tamil": "Konjam sweet-aa irukkanum.",
+        "english": "It should be a little sweet"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "sweet",
+        "english": "sweet"
+      },
+      {
+        "tamil": "kaaram",
+        "english": "spice"
+      },
+      {
+        "tamil": "less",
+        "english": "less"
+      }
+    ]
+  },
+  {
+    "day": 48,
+    "focus": "Permission",
+    "sentences": [
+      {
+        "tamil": "Naan inga ukkaaralaama?",
+        "english": "May I sit here?"
+      },
+      {
+        "tamil": "Naan inga wait pannalaama?",
+        "english": "May I wait here?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "ukkaaru",
+        "english": "sit"
+      },
+      {
+        "tamil": "wait",
+        "english": "wait"
+      },
+      {
+        "tamil": "inga",
+        "english": "here"
+      }
+    ]
+  },
+  {
+    "day": 49,
+    "focus": "Instructions",
+    "sentences": [
+      {
+        "tamil": "Inga vaanga.",
+        "english": "Come here"
+      },
+      {
+        "tamil": "Anga ponga.",
+        "english": "Go there"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "vaanga",
+        "english": "come please"
+      },
+      {
+        "tamil": "ponga",
+        "english": "go please"
+      },
+      {
+        "tamil": "nillu",
+        "english": "stand/stop"
+      }
+    ]
+  },
+  {
+    "day": 50,
+    "focus": "Review connector",
+    "sentences": [
+      {
+        "tamil": "Adhukku apram ___ .",
+        "english": "After that, ___"
+      },
+      {
+        "tamil": "Aana ___ .",
+        "english": "But ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "aana",
+        "english": "but"
+      },
+      {
+        "tamil": "adhukku apram",
+        "english": "after that"
+      },
+      {
+        "tamil": "because",
+        "english": "because"
+      }
+    ]
+  },
+  {
+    "day": 51,
+    "focus": "Reasons",
+    "sentences": [
+      {
+        "tamil": "Naan ___ panren, yenna ___ .",
+        "english": "I do ___ because ___"
+      },
+      {
+        "tamil": "Yen ___ ?",
+        "english": "Why ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "yen",
+        "english": "why"
+      },
+      {
+        "tamil": "yenna",
+        "english": "because"
+      },
+      {
+        "tamil": "reason",
+        "english": "reason"
+      }
+    ]
+  },
+  {
+    "day": 52,
+    "focus": "If",
+    "sentences": [
+      {
+        "tamil": "___ na, naan ___ panren.",
+        "english": "If ___, I will do ___"
+      },
+      {
+        "tamil": "Mazhai na, naan vara maaten.",
+        "english": "If rain, I won't come"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "mazhai",
+        "english": "rain"
+      },
+      {
+        "tamil": "na",
+        "english": "if"
+      },
+      {
+        "tamil": "varamaten",
+        "english": "won't come"
+      }
+    ]
+  },
+  {
+    "day": 53,
+    "focus": "Before / after",
+    "sentences": [
+      {
+        "tamil": "___ munnadi call pannunga.",
+        "english": "Call before ___"
+      },
+      {
+        "tamil": "___ apram pesalaam.",
+        "english": "We can talk after ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "munnadi",
+        "english": "before/in front"
+      },
+      {
+        "tamil": "apram",
+        "english": "after"
+      },
+      {
+        "tamil": "call",
+        "english": "call"
+      }
+    ]
+  },
+  {
+    "day": 54,
+    "focus": "With / without",
+    "sentences": [
+      {
+        "tamil": "Naan ___ kooda poren.",
+        "english": "I am going with ___"
+      },
+      {
+        "tamil": "___ illaama panna mudiyadhu.",
+        "english": "Cannot do without ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "kooda",
+        "english": "with"
+      },
+      {
+        "tamil": "illaama",
+        "english": "without"
+      },
+      {
+        "tamil": "ticket",
+        "english": "ticket"
+      }
+    ]
+  },
+  {
+    "day": 55,
+    "focus": "For someone",
+    "sentences": [
+      {
+        "tamil": "Idhu enakku.",
+        "english": "This is for me"
+      },
+      {
+        "tamil": "Idhu ungalukku.",
+        "english": "This is for you"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "enakku",
+        "english": "to/for me"
+      },
+      {
+        "tamil": "ungalukku",
+        "english": "to/for you"
+      },
+      {
+        "tamil": "avangalukku",
+        "english": "to/for them"
+      }
+    ]
+  },
+  {
+    "day": 56,
+    "focus": "Possession",
+    "sentences": [
+      {
+        "tamil": "Idhu en ___ .",
+        "english": "This is my ___"
+      },
+      {
+        "tamil": "Adhu unga ___ aa?",
+        "english": "Is that your ___?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "en",
+        "english": "my"
+      },
+      {
+        "tamil": "unga",
+        "english": "your"
+      },
+      {
+        "tamil": "car",
+        "english": "car"
+      }
+    ]
+  },
+  {
+    "day": 57,
+    "focus": "Comparisons",
+    "sentences": [
+      {
+        "tamil": "Idhu adha vida nalla irukku.",
+        "english": "This is better than that"
+      },
+      {
+        "tamil": "Adhu idha vida perusa irukku.",
+        "english": "That is bigger than this"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "vida",
+        "english": "than"
+      },
+      {
+        "tamil": "better",
+        "english": "better"
+      },
+      {
+        "tamil": "same",
+        "english": "same"
+      }
+    ]
+  },
+  {
+    "day": 58,
+    "focus": "Most / favorite",
+    "sentences": [
+      {
+        "tamil": "Enakku idhu dhaan romba pidikkum.",
+        "english": "I like this the most"
+      },
+      {
+        "tamil": "Unga favorite enna?",
+        "english": "What is your favorite?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "dhaan",
+        "english": "exactly/only/emphasis"
+      },
+      {
+        "tamil": "favorite",
+        "english": "favorite"
+      },
+      {
+        "tamil": "romba",
+        "english": "very"
+      }
+    ]
+  },
+  {
+    "day": 59,
+    "focus": "Frequency",
+    "sentences": [
+      {
+        "tamil": "Naan sometimes ___ panren.",
+        "english": "I sometimes do ___"
+      },
+      {
+        "tamil": "Naan usually ___ panren.",
+        "english": "I usually do ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "sometimes",
+        "english": "sometimes"
+      },
+      {
+        "tamil": "usually",
+        "english": "usually"
+      },
+      {
+        "tamil": "eppovum",
+        "english": "always"
+      }
+    ]
+  },
+  {
+    "day": 60,
+    "focus": "Never / rarely",
+    "sentences": [
+      {
+        "tamil": "Naan ___ panna maaten.",
+        "english": "I never/won't do ___"
+      },
+      {
+        "tamil": "Naan romba rare-aa ___ panren.",
+        "english": "I rarely do ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "rare-aa",
+        "english": "rarely"
+      },
+      {
+        "tamil": "never",
+        "english": "never"
+      },
+      {
+        "tamil": "habit",
+        "english": "habit"
+      }
+    ]
+  },
+  {
+    "day": 61,
+    "focus": "Phone talk",
+    "sentences": [
+      {
+        "tamil": "Hello, naan ___ pesaren.",
+        "english": "Hello, I am ___ speaking"
+      },
+      {
+        "tamil": "Konjam later call pannunga.",
+        "english": "Please call later"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "hello",
+        "english": "hello"
+      },
+      {
+        "tamil": "later",
+        "english": "later"
+      },
+      {
+        "tamil": "message",
+        "english": "message"
+      }
+    ]
+  },
+  {
+    "day": 62,
+    "focus": "Messaging",
+    "sentences": [
+      {
+        "tamil": "Naan message anupparen.",
+        "english": "I am sending a message"
+      },
+      {
+        "tamil": "Neenga message paathingala?",
+        "english": "Did you see the message?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "anuppu",
+        "english": "send"
+      },
+      {
+        "tamil": "receive",
+        "english": "receive"
+      },
+      {
+        "tamil": "number",
+        "english": "number"
+      }
+    ]
+  },
+  {
+    "day": 63,
+    "focus": "Meeting",
+    "sentences": [
+      {
+        "tamil": "Naama eppo meet pannalaam?",
+        "english": "When can we meet?"
+      },
+      {
+        "tamil": "Naama enga meet pannalaam?",
+        "english": "Where can we meet?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "meet",
+        "english": "meet"
+      },
+      {
+        "tamil": "naama",
+        "english": "we"
+      },
+      {
+        "tamil": "plan",
+        "english": "plan"
+      }
+    ]
+  },
+  {
+    "day": 64,
+    "focus": "Availability",
+    "sentences": [
+      {
+        "tamil": "Naan free-aa irukken.",
+        "english": "I am free/available"
+      },
+      {
+        "tamil": "Naan busy-aa irukken.",
+        "english": "I am busy"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "free",
+        "english": "free/available"
+      },
+      {
+        "tamil": "busy",
+        "english": "busy"
+      },
+      {
+        "tamil": "office",
+        "english": "office"
+      }
+    ]
+  },
+  {
+    "day": 65,
+    "focus": "Waiting / late",
+    "sentences": [
+      {
+        "tamil": "Naan wait panren.",
+        "english": "I am waiting"
+      },
+      {
+        "tamil": "Naan late-aa varen.",
+        "english": "I am coming late"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "late",
+        "english": "late"
+      },
+      {
+        "tamil": "early",
+        "english": "early"
+      },
+      {
+        "tamil": "varren",
+        "english": "coming"
+      }
+    ]
+  },
+  {
+    "day": 66,
+    "focus": "Apology",
+    "sentences": [
+      {
+        "tamil": "Sorry, naan late.",
+        "english": "Sorry, I am late"
+      },
+      {
+        "tamil": "Parava illa.",
+        "english": "It's okay / no problem"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "sorry",
+        "english": "sorry"
+      },
+      {
+        "tamil": "parava illa",
+        "english": "no problem"
+      },
+      {
+        "tamil": "problem",
+        "english": "problem"
+      }
+    ]
+  },
+  {
+    "day": 67,
+    "focus": "Thanks",
+    "sentences": [
+      {
+        "tamil": "Romba thanks.",
+        "english": "Thanks a lot"
+      },
+      {
+        "tamil": "Ungalukku nandri.",
+        "english": "Thank you"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "nandri",
+        "english": "thanks"
+      },
+      {
+        "tamil": "romba thanks",
+        "english": "thanks a lot"
+      },
+      {
+        "tamil": "welcome",
+        "english": "welcome"
+      }
+    ]
+  },
+  {
+    "day": 68,
+    "focus": "Polite asking",
+    "sentences": [
+      {
+        "tamil": "Please, idhu pannunga.",
+        "english": "Please do this"
+      },
+      {
+        "tamil": "Konjam wait pannunga.",
+        "english": "Please wait a little"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "please",
+        "english": "please"
+      },
+      {
+        "tamil": "konjam",
+        "english": "a little"
+      },
+      {
+        "tamil": "seiyunga/pannunga",
+        "english": "do please"
+      }
+    ]
+  },
+  {
+    "day": 69,
+    "focus": "Ability questions",
+    "sentences": [
+      {
+        "tamil": "Ungalukku Tamil theriyuma?",
+        "english": "Do you know Tamil?"
+      },
+      {
+        "tamil": "Neenga English pesuveengala?",
+        "english": "Do you speak English?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "English",
+        "english": "English"
+      },
+      {
+        "tamil": "Hindi",
+        "english": "Hindi"
+      },
+      {
+        "tamil": "language",
+        "english": "language"
+      }
+    ]
+  },
+  {
+    "day": 70,
+    "focus": "Learning Tamil",
+    "sentences": [
+      {
+        "tamil": "Naan Tamil kathukkaren.",
+        "english": "I am learning Tamil"
+      },
+      {
+        "tamil": "Konjam correct pannunga.",
+        "english": "Please correct me a little"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "kathukku",
+        "english": "learn"
+      },
+      {
+        "tamil": "correct",
+        "english": "correct"
+      },
+      {
+        "tamil": "practice",
+        "english": "practice"
+      }
+    ]
+  },
+  {
+    "day": 71,
+    "focus": "Clarification",
+    "sentences": [
+      {
+        "tamil": "Adhu enna artham?",
+        "english": "What does that mean?"
+      },
+      {
+        "tamil": "Idha epdi solradhu?",
+        "english": "How to say this?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "artham",
+        "english": "meaning"
+      },
+      {
+        "tamil": "epdi",
+        "english": "how"
+      },
+      {
+        "tamil": "solradhu",
+        "english": "saying/to say"
+      }
+    ]
+  },
+  {
+    "day": 72,
+    "focus": "Repetition",
+    "sentences": [
+      {
+        "tamil": "Innum oru vaati sollunga.",
+        "english": "Say one more time"
+      },
+      {
+        "tamil": "Slow-aa repeat pannunga.",
+        "english": "Repeat slowly"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "innum",
+        "english": "more/still"
+      },
+      {
+        "tamil": "oru vaati",
+        "english": "one time"
+      },
+      {
+        "tamil": "repeat",
+        "english": "repeat"
+      }
+    ]
+  },
+  {
+    "day": 73,
+    "focus": "Household",
+    "sentences": [
+      {
+        "tamil": "Naan veetla irukken.",
+        "english": "I am at home"
+      },
+      {
+        "tamil": "Neenga veetla irukkingala?",
+        "english": "Are you at home?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "veetla",
+        "english": "at home"
+      },
+      {
+        "tamil": "room",
+        "english": "room"
+      },
+      {
+        "tamil": "kitchen",
+        "english": "kitchen"
+      }
+    ]
+  },
+  {
+    "day": 74,
+    "focus": "Cleaning / chores",
+    "sentences": [
+      {
+        "tamil": "Naan room clean panren.",
+        "english": "I am cleaning the room"
+      },
+      {
+        "tamil": "Idha enga veikanum?",
+        "english": "Where should I keep this?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "veika",
+        "english": "keep/place"
+      },
+      {
+        "tamil": "clean",
+        "english": "clean"
+      },
+      {
+        "tamil": "kuzhandhai",
+        "english": "child"
+      }
+    ]
+  },
+  {
+    "day": 75,
+    "focus": "Work",
+    "sentences": [
+      {
+        "tamil": "Naan office-la velai panren.",
+        "english": "I work at the office"
+      },
+      {
+        "tamil": "Innikki work romba irukku.",
+        "english": "Today there is a lot of work"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "office-la",
+        "english": "at office"
+      },
+      {
+        "tamil": "meeting",
+        "english": "meeting"
+      },
+      {
+        "tamil": "project",
+        "english": "project"
+      }
+    ]
+  },
+  {
+    "day": 76,
+    "focus": "Study",
+    "sentences": [
+      {
+        "tamil": "Naan padikkaren.",
+        "english": "I am studying/reading"
+      },
+      {
+        "tamil": "Enakku exam irukku.",
+        "english": "I have an exam"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "padi",
+        "english": "study/read"
+      },
+      {
+        "tamil": "exam",
+        "english": "exam"
+      },
+      {
+        "tamil": "class",
+        "english": "class"
+      }
+    ]
+  },
+  {
+    "day": 77,
+    "focus": "Weather",
+    "sentences": [
+      {
+        "tamil": "Innikki weather nalla irukku.",
+        "english": "Today's weather is good"
+      },
+      {
+        "tamil": "Veliya romba soodu.",
+        "english": "Outside is very hot"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "weather",
+        "english": "weather"
+      },
+      {
+        "tamil": "veliya",
+        "english": "outside"
+      },
+      {
+        "tamil": "kaathu",
+        "english": "wind"
+      }
+    ]
+  },
+  {
+    "day": 78,
+    "focus": "Clothing",
+    "sentences": [
+      {
+        "tamil": "Idhu en shirt.",
+        "english": "This is my shirt"
+      },
+      {
+        "tamil": "Indha dress nalla irukka?",
+        "english": "Is this dress good?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "shirt",
+        "english": "shirt"
+      },
+      {
+        "tamil": "dress",
+        "english": "dress"
+      },
+      {
+        "tamil": "shoe",
+        "english": "shoe"
+      }
+    ]
+  },
+  {
+    "day": 79,
+    "focus": "Colors",
+    "sentences": [
+      {
+        "tamil": "Enakku ___ color pidikkum.",
+        "english": "I like ___ color"
+      },
+      {
+        "tamil": "Idhu black-aa irukku.",
+        "english": "This is black"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "black",
+        "english": "black"
+      },
+      {
+        "tamil": "white",
+        "english": "white"
+      },
+      {
+        "tamil": "red",
+        "english": "red"
+      }
+    ]
+  },
+  {
+    "day": 80,
+    "focus": "More colors",
+    "sentences": [
+      {
+        "tamil": "Adhu blue-aa irukku.",
+        "english": "That is blue"
+      },
+      {
+        "tamil": "Green color venum.",
+        "english": "I want green color"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "blue",
+        "english": "blue"
+      },
+      {
+        "tamil": "green",
+        "english": "green"
+      },
+      {
+        "tamil": "yellow",
+        "english": "yellow"
+      }
+    ]
+  },
+  {
+    "day": 81,
+    "focus": "Numbers 1",
+    "sentences": [
+      {
+        "tamil": "Oru ___ kudunga.",
+        "english": "Give one ___"
+      },
+      {
+        "tamil": "Rendu ___ venum.",
+        "english": "Need two ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "onnu",
+        "english": "one"
+      },
+      {
+        "tamil": "rendu",
+        "english": "two"
+      },
+      {
+        "tamil": "moonnu",
+        "english": "three"
+      }
+    ]
+  },
+  {
+    "day": 82,
+    "focus": "Numbers 2",
+    "sentences": [
+      {
+        "tamil": "Naalu per varanga.",
+        "english": "Four people are coming"
+      },
+      {
+        "tamil": "Anju nimisham wait pannunga.",
+        "english": "Wait five minutes"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "naalu",
+        "english": "four"
+      },
+      {
+        "tamil": "anju",
+        "english": "five"
+      },
+      {
+        "tamil": "aaru",
+        "english": "six"
+      }
+    ]
+  },
+  {
+    "day": 83,
+    "focus": "Numbers 3",
+    "sentences": [
+      {
+        "tamil": "Ezhu mani-ku varen.",
+        "english": "I will come at seven"
+      },
+      {
+        "tamil": "Pathu rupaa kudunga.",
+        "english": "Give ten rupees"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "ezhu",
+        "english": "seven"
+      },
+      {
+        "tamil": "ettu",
+        "english": "eight"
+      },
+      {
+        "tamil": "pathu",
+        "english": "ten"
+      }
+    ]
+  },
+  {
+    "day": 84,
+    "focus": "Date / day",
+    "sentences": [
+      {
+        "tamil": "Innikki enna day?",
+        "english": "What day is today?"
+      },
+      {
+        "tamil": "Naalaikku Sunday-aa?",
+        "english": "Is tomorrow Sunday?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "day",
+        "english": "day"
+      },
+      {
+        "tamil": "week",
+        "english": "week"
+      },
+      {
+        "tamil": "month",
+        "english": "month"
+      }
+    ]
+  },
+  {
+    "day": 85,
+    "focus": "Plans",
+    "sentences": [
+      {
+        "tamil": "Innikki plan enna?",
+        "english": "What is today's plan?"
+      },
+      {
+        "tamil": "Naama evening pogalaam.",
+        "english": "We can go in the evening"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "pogalaam",
+        "english": "can go/let's go"
+      },
+      {
+        "tamil": "evening",
+        "english": "evening"
+      },
+      {
+        "tamil": "plan",
+        "english": "plan"
+      }
+    ]
+  },
+  {
+    "day": 86,
+    "focus": "Suggestions",
+    "sentences": [
+      {
+        "tamil": "Naama ___ pannalaama?",
+        "english": "Shall we do ___?"
+      },
+      {
+        "tamil": "Idhu try pannalaam.",
+        "english": "We can try this"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "try",
+        "english": "try"
+      },
+      {
+        "tamil": "idea",
+        "english": "idea"
+      },
+      {
+        "tamil": "okay",
+        "english": "okay"
+      }
+    ]
+  },
+  {
+    "day": 87,
+    "focus": "Agreement",
+    "sentences": [
+      {
+        "tamil": "Seri, pannalaam.",
+        "english": "Okay, let's do it"
+      },
+      {
+        "tamil": "Illai, vendaam.",
+        "english": "No, don't want"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "seri",
+        "english": "okay"
+      },
+      {
+        "tamil": "illai",
+        "english": "no"
+      },
+      {
+        "tamil": "aama",
+        "english": "yes"
+      }
+    ]
+  },
+  {
+    "day": 88,
+    "focus": "Opinions",
+    "sentences": [
+      {
+        "tamil": "Enakku idhu nalla thonudhu.",
+        "english": "I think this is good"
+      },
+      {
+        "tamil": "Ungalukku epdi thonudhu?",
+        "english": "What do you think?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "thonudhu",
+        "english": "feels/seems"
+      },
+      {
+        "tamil": "opinion",
+        "english": "opinion"
+      },
+      {
+        "tamil": "maybe",
+        "english": "maybe"
+      }
+    ]
+  },
+  {
+    "day": 89,
+    "focus": "Problems",
+    "sentences": [
+      {
+        "tamil": "Oru problem irukku.",
+        "english": "There is a problem"
+      },
+      {
+        "tamil": "Idhu work aagala.",
+        "english": "This is not working"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "aagala",
+        "english": "did not happen/work"
+      },
+      {
+        "tamil": "repair",
+        "english": "repair"
+      },
+      {
+        "tamil": "issue",
+        "english": "issue"
+      }
+    ]
+  },
+  {
+    "day": 90,
+    "focus": "Fixing",
+    "sentences": [
+      {
+        "tamil": "Idha fix panna mudiyuma?",
+        "english": "Can this be fixed?"
+      },
+      {
+        "tamil": "Konjam check pannunga.",
+        "english": "Please check a little"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "fix",
+        "english": "fix"
+      },
+      {
+        "tamil": "check",
+        "english": "check"
+      },
+      {
+        "tamil": "open",
+        "english": "open"
+      }
+    ]
+  },
+  {
+    "day": 91,
+    "focus": "Emphasis",
+    "sentences": [
+      {
+        "tamil": "Idhu dhaan venum.",
+        "english": "I want exactly this"
+      },
+      {
+        "tamil": "Ippo dhaan theriyudhu.",
+        "english": "Now only I understand"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "dhan/dhaan",
+        "english": "exactly/only"
+      },
+      {
+        "tamil": "mattum",
+        "english": "only"
+      },
+      {
+        "tamil": "ippo dhaan",
+        "english": "only now"
+      }
+    ]
+  },
+  {
+    "day": 92,
+    "focus": "Already / not yet",
+    "sentences": [
+      {
+        "tamil": "Naan already panniten.",
+        "english": "I already did it"
+      },
+      {
+        "tamil": "Innum panna illa.",
+        "english": "Not done yet"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "already",
+        "english": "already"
+      },
+      {
+        "tamil": "innum",
+        "english": "yet/still/more"
+      },
+      {
+        "tamil": "panniten",
+        "english": "I did/finished"
+      }
+    ]
+  },
+  {
+    "day": 93,
+    "focus": "Finished / remaining",
+    "sentences": [
+      {
+        "tamil": "Saapadu mudinjudhu.",
+        "english": "Food is finished"
+      },
+      {
+        "tamil": "Innum konjam irukku.",
+        "english": "A little is still there"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "mudinjudhu",
+        "english": "finished"
+      },
+      {
+        "tamil": "meedhi",
+        "english": "remaining"
+      },
+      {
+        "tamil": "full",
+        "english": "full"
+      }
+    ]
+  },
+  {
+    "day": 94,
+    "focus": "Starting / stopping",
+    "sentences": [
+      {
+        "tamil": "Naama start pannalaam.",
+        "english": "Let's start"
+      },
+      {
+        "tamil": "Inga stop pannalaam.",
+        "english": "Let's stop here"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "start",
+        "english": "start"
+      },
+      {
+        "tamil": "stop",
+        "english": "stop"
+      },
+      {
+        "tamil": "continue",
+        "english": "continue"
+      }
+    ]
+  },
+  {
+    "day": 95,
+    "focus": "Asking for examples",
+    "sentences": [
+      {
+        "tamil": "Oru example kudunga.",
+        "english": "Give one example"
+      },
+      {
+        "tamil": "Idha sentence-la use pannunga.",
+        "english": "Use this in a sentence"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "example",
+        "english": "example"
+      },
+      {
+        "tamil": "sentence",
+        "english": "sentence"
+      },
+      {
+        "tamil": "use",
+        "english": "use"
+      }
+    ]
+  },
+  {
+    "day": 96,
+    "focus": "Storytelling",
+    "sentences": [
+      {
+        "tamil": "Nethu naan ___ ponen.",
+        "english": "Yesterday I went to ___"
+      },
+      {
+        "tamil": "Apram naan ___ panninen.",
+        "english": "Then I did ___"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "story",
+        "english": "story"
+      },
+      {
+        "tamil": "first",
+        "english": "first"
+      },
+      {
+        "tamil": "last",
+        "english": "last"
+      }
+    ]
+  },
+  {
+    "day": 97,
+    "focus": "Conversation flow",
+    "sentences": [
+      {
+        "tamil": "Apparam enna aachu?",
+        "english": "What happened next?"
+      },
+      {
+        "tamil": "Adhukku apram naan vandhen.",
+        "english": "After that I came"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "aachu",
+        "english": "happened"
+      },
+      {
+        "tamil": "vandhen",
+        "english": "I came"
+      },
+      {
+        "tamil": "ponom",
+        "english": "we went"
+      }
+    ]
+  },
+  {
+    "day": 98,
+    "focus": "Social small talk",
+    "sentences": [
+      {
+        "tamil": "Eppadi irukkinga?",
+        "english": "How are you?"
+      },
+      {
+        "tamil": "Nalla irukken, neenga?",
+        "english": "I am good, you?"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "eppadi",
+        "english": "how"
+      },
+      {
+        "tamil": "nalla",
+        "english": "well/good"
+      },
+      {
+        "tamil": "irukken",
+        "english": "I am"
+      }
+    ]
+  },
+  {
+    "day": 99,
+    "focus": "Invitations",
+    "sentences": [
+      {
+        "tamil": "Neenga varuveengala?",
+        "english": "Will you come?"
+      },
+      {
+        "tamil": "Naama serndhu pogalaam.",
+        "english": "We can go together"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "serndhu",
+        "english": "together"
+      },
+      {
+        "tamil": "invite",
+        "english": "invite"
+      },
+      {
+        "tamil": "function",
+        "english": "event/function"
+      }
+    ]
+  },
+  {
+    "day": 100,
+    "focus": "Final integration",
+    "sentences": [
+      {
+        "tamil": "Naan Tamil-la konjam pesa mudiyum.",
+        "english": "I can speak a little in Tamil"
+      },
+      {
+        "tamil": "Innum practice panna venum.",
+        "english": "I still need to practice"
+      }
+    ],
+    "words": [
+      {
+        "tamil": "konjam",
+        "english": "little"
+      },
+      {
+        "tamil": "pesa",
+        "english": "to speak"
+      },
+      {
+        "tamil": "practice",
+        "english": "practice"
+      }
+    ]
+  }
+]

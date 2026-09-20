@@ -1,0 +1,310 @@
+use leptos::prelude::*;
+use serde::Deserialize;
+use std::sync::Arc;
+
+#[derive(Clone, Deserialize)]
+struct DayData {
+    day: usize,
+    focus: String,
+    sentences: Vec<Item>,
+    words: Vec<Item>,
+}
+
+#[derive(Clone, Deserialize)]
+struct Item {
+    tamil: String,
+    english: String,
+}
+
+#[derive(Clone)]
+struct Card {
+    day: usize,
+    kind: &'static str,
+    front: String,
+    back: String,
+}
+
+fn load_data() -> Vec<DayData> {
+    serde_json::from_str(include_str!("../data/flashcards.json"))
+        .expect("data/flashcards.json should be valid flashcard data")
+}
+
+fn cards_until(data: &[DayData], max_day: usize) -> Vec<Card> {
+    data.iter()
+        .filter(|day| day.day <= max_day)
+        .flat_map(|day| {
+            let sentence_cards = day.sentences.iter().map(|item| Card {
+                day: day.day,
+                kind: "Sentence",
+                front: item.english.clone(),
+                back: item.tamil.clone(),
+            });
+
+            let word_cards = day.words.iter().map(|item| Card {
+                day: day.day,
+                kind: "Word",
+                front: item.english.clone(),
+                back: item.tamil.clone(),
+            });
+
+            sentence_cards.chain(word_cards)
+        })
+        .collect()
+}
+
+fn main() {
+    mount_to_body(App);
+}
+
+#[component]
+fn App() -> impl IntoView {
+    let data = Arc::new(load_data());
+    let total_days = data.len();
+
+    let (max_day, set_max_day) = signal(1usize);
+    let (day_input, set_day_input) = signal("1".to_string());
+    let (card_index, set_card_index) = signal(0usize);
+    let (show_answer, set_show_answer) = signal(false);
+    let (show_list, set_show_list) = signal(false);
+    let (dark_mode, set_dark_mode) = signal(false);
+
+    let current_cards = {
+        let data = Arc::clone(&data);
+        move || cards_until(&data, max_day.get())
+    };
+
+    let current_card = {
+        let current_cards = current_cards.clone();
+        move || {
+            let cards = current_cards();
+            if cards.is_empty() {
+                None
+            } else {
+                Some(cards[card_index.get().min(cards.len() - 1)].clone())
+            }
+        }
+    };
+
+    let reset_card = move || {
+        set_card_index.set(0);
+        set_show_answer.set(false);
+    };
+
+    let apply_day = move || {
+        let day = day_input.get().parse::<usize>().unwrap_or(1).clamp(1, total_days);
+        set_max_day.set(day);
+        set_day_input.set(day.to_string());
+        reset_card();
+    };
+
+    view! {
+        <main class="app" class:dark=move || dark_mode.get()>
+            <style>{STYLE}</style>
+
+            <header class="topbar">
+                <div>
+                    <h1>"Learn Tamil Flashcards"</h1>
+                    <p>"Spoken Tamil practice using English transliteration."</p>
+                </div>
+                <nav>
+                    <button
+                        class:active=move || !show_list.get()
+                        on:click=move |_| set_show_list.set(false)
+                    >"Flashcards"</button>
+                    <button
+                        class:active=move || show_list.get()
+                        on:click=move |_| set_show_list.set(true)
+                    >"List"</button>
+                    <button on:click=move |_| set_dark_mode.update(|dark| *dark = !*dark)>
+                        {move || if dark_mode.get() { "Light mode" } else { "Dark mode" }}
+                    </button>
+                </nav>
+            </header>
+
+            <section class="controls">
+                <label>
+                    "Study until day "
+                    <input
+                        type="number"
+                        min="1"
+                        max=total_days
+                        prop:value=move || day_input.get()
+                        on:input=move |ev| set_day_input.set(event_target_value(&ev))
+                    />
+                    <span>" / " {total_days}</span>
+                </label>
+                <button on:click=move |_| apply_day()>"Enter"</button>
+                <span class="selected-day">{move || format!("Showing through day {}", max_day.get())}</span>
+            </section>
+
+            <Show
+                when=move || show_list.get()
+                fallback=move || view! {
+                    <FlashcardPage
+                        current_cards=current_cards.clone()
+                        current_card=current_card.clone()
+                        card_index=card_index
+                        set_card_index=set_card_index
+                        show_answer=show_answer
+                        set_show_answer=set_show_answer
+                    />
+                }
+            >
+                <ListPage data=Arc::clone(&data) max_day=max_day />
+            </Show>
+        </main>
+    }
+}
+
+#[component]
+fn FlashcardPage(
+    current_cards: impl Fn() -> Vec<Card> + Clone + Send + Sync + 'static,
+    current_card: impl Fn() -> Option<Card> + Clone + Send + Sync + 'static,
+    card_index: ReadSignal<usize>,
+    set_card_index: WriteSignal<usize>,
+    show_answer: ReadSignal<bool>,
+    set_show_answer: WriteSignal<bool>,
+) -> impl IntoView {
+    let total_cards = {
+        let current_cards = current_cards.clone();
+        move || current_cards().len()
+    };
+
+    let next = {
+        let current_cards = current_cards.clone();
+        move || {
+            let len = current_cards().len();
+            if len > 0 {
+                set_card_index.update(|index| *index = (*index + 1) % len);
+                set_show_answer.set(false);
+            }
+        }
+    };
+
+    let previous = {
+        let current_cards = current_cards.clone();
+        move || {
+            let len = current_cards().len();
+            if len > 0 {
+                set_card_index.update(|index| *index = if *index == 0 { len - 1 } else { *index - 1 });
+                set_show_answer.set(false);
+            }
+        }
+    };
+
+    view! {
+        <section class="page">
+            <div class="progress">
+                {move || format!("Card {} of {}", card_index.get() + 1, total_cards())}
+            </div>
+
+            <button class="card" on:click=move |_| set_show_answer.update(|show| *show = !*show)>
+                {move || match current_card() {
+                    Some(card) => {
+                        let answer = card.back.clone();
+                        view! {
+                            <div>
+                                <div class="meta">{format!("Day {} · {}", card.day, card.kind)}</div>
+                                <div class="front">{card.front}</div>
+                                <div class="hint">"Click card to reveal/hide Tamil"</div>
+                                {move || show_answer.get().then(|| view! { <div class="back">{answer.clone()}</div> })}
+                            </div>
+                        }.into_any()
+                    },
+                    None => view! { <div>"No cards available."</div> }.into_any(),
+                }}
+            </button>
+
+            <div class="actions">
+                <button on:click=move |_| previous()>"Previous"</button>
+                <button on:click=move |_| set_show_answer.update(|show| *show = !*show)>
+                    {move || if show_answer.get() { "Hide Tamil" } else { "Show Tamil" }}
+                </button>
+                <button on:click=move |_| next()>"Next"</button>
+            </div>
+        </section>
+    }
+}
+
+#[component]
+fn ListPage(data: Arc<Vec<DayData>>, max_day: ReadSignal<usize>) -> impl IntoView {
+    view! {
+        <section class="page list-page">
+            <h2>{move || format!("All data through day {}", max_day.get())}</h2>
+            <For
+                each={move || data.iter().filter(|day| day.day <= max_day.get()).cloned().collect::<Vec<_>>()}
+                key={|day| day.day}
+                children={move |day| view! {
+                    <article class="day-block">
+                        <h3>{format!("Day {}: {}", day.day, day.focus)}</h3>
+                        <h4>"Sentences"</h4>
+                        <ul>
+                            {day.sentences.into_iter().map(|item| view! {
+                                <li><strong>{item.tamil}</strong>" = "{item.english}</li>
+                            }).collect_view()}
+                        </ul>
+                        <h4>"Words"</h4>
+                        <ul>
+                            {day.words.into_iter().map(|item| view! {
+                                <li><strong>{item.tamil}</strong>" = "{item.english}</li>
+                            }).collect_view()}
+                        </ul>
+                    </article>
+                }}
+            />
+        </section>
+    }
+}
+
+const STYLE: &str = r#"
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; color: #172033; }
+    button, input { font: inherit; }
+    .app { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+    h1 { margin: 0 0 4px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    p { margin: 0; color: #64748b; }
+    nav, .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    button { border: 0; border-radius: 12px; padding: 10px 14px; background: #e2e8f0; color: #172033; cursor: pointer; }
+    button:hover, button.active { background: #2563eb; color: white; }
+    .controls, .page { background: white; border: 1px solid #e2e8f0; border-radius: 20px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06); }
+    .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px; margin-bottom: 18px; }
+    .controls input { width: 84px; margin-left: 8px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 10px; }
+    .selected-day { color: #64748b; }
+    .page { padding: 22px; }
+    .progress { text-align: center; color: #64748b; margin-bottom: 14px; }
+    .card { display: block; width: 100%; min-height: 300px; padding: 34px; border: 2px dashed #cbd5e1; background: #f8fafc; color: inherit; text-align: center; }
+    .card:hover { background: #eff6ff; color: inherit; border-color: #2563eb; }
+    .meta { color: #64748b; font-size: 0.95rem; margin-bottom: 24px; }
+    .front { font-size: clamp(2rem, 7vw, 4rem); font-weight: 800; line-height: 1.1; }
+    .hint { margin-top: 22px; color: #94a3b8; }
+    .back { margin: 26px auto 0; width: fit-content; max-width: 100%; padding: 14px 18px; border-radius: 14px; background: #dcfce7; color: #166534; font-size: 1.4rem; font-weight: 700; }
+    .actions { justify-content: center; margin-top: 18px; }
+    .list-page h2 { margin-top: 0; }
+    .day-block { padding: 16px 0; border-top: 1px solid #e2e8f0; }
+    .day-block:first-of-type { border-top: 0; }
+    .day-block h3 { margin: 0 0 12px; }
+    .day-block h4 { margin: 12px 0 6px; color: #475569; }
+    li { margin: 6px 0; }
+
+    body:has(.app.dark) { background: #000; }
+    .app.dark { color: #e5e7eb; background: #000; min-height: 100vh; border-radius: 0; padding-left: 16px; padding-right: 16px; }
+    .app.dark p,
+    .app.dark .progress,
+    .app.dark .meta,
+    .app.dark .selected-day { color: #94a3b8; }
+    .app.dark button { background: #334155; color: #e5e7eb; }
+    .app.dark button:hover,
+    .app.dark button.active { background: #60a5fa; color: #0f172a; }
+    .app.dark input { background: #020617; border-color: #475569; color: #e5e7eb; }
+    .app.dark .controls,
+    .app.dark .page { background: #111827; border-color: #334155; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); }
+    .app.dark .card { background: #020617; border-color: #475569; color: #e5e7eb; }
+    .app.dark .card:hover { background: #172554; border-color: #60a5fa; color: #e5e7eb; }
+    .app.dark .hint { color: #64748b; }
+    .app.dark .back { background: #14532d; color: #dcfce7; }
+    .app.dark .day-block { border-top-color: #334155; }
+    .app.dark .day-block h4 { color: #cbd5e1; }
+
+    @media (max-width: 640px) { .topbar { align-items: flex-start; flex-direction: column; } nav { width: 100%; } nav button { flex: 1; } }
+"#;
