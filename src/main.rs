@@ -98,7 +98,7 @@ fn App() -> impl IntoView {
     let (card_index, set_card_index) = signal(random_index(cards_until(&data, 1).len()));
     let (show_answer, set_show_answer) = signal(false);
     let (show_list, set_show_list) = signal(false);
-    let (dark_mode, set_dark_mode) = signal(false);
+    let (dark_mode, set_dark_mode) = signal(true);
 
     let current_cards = {
         let data = Arc::clone(&data);
@@ -406,33 +406,115 @@ const STYLE: &str = r#"
     .app.dark .day-block h4 { color: #cbd5e1; }
 
     @media (max-width: 640px) {
-        .app { width: 100%; padding-left: 10px; padding-right: 10px; }
-        .topbar { align-items: stretch; flex-direction: column; gap: 12px; text-align: center; }
-        nav { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        nav button { width: 100%; padding-left: 8px; padding-right: 8px; }
-        nav button:last-child { grid-column: 1 / -1; }
-        .controls { align-items: stretch; gap: 10px; padding: 12px; }
-        .controls label { display: grid; grid-template-columns: auto minmax(72px, 1fr) auto; align-items: center; gap: 8px; width: 100%; }
-        .controls input { width: 100%; min-width: 0; margin-left: 0; }
-        .controls button { width: 100%; }
-        .selected-day { width: 100%; text-align: center; font-size: 0.95rem; }
-        .page { padding: 12px; border-radius: 16px; }
-        .card { min-height: 44svh; padding: 18px 12px; }
+        .app {
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .topbar {
+            align-items: stretch;
+            flex-direction: column;
+            gap: 14px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        h1 { font-size: clamp(1.45rem, 8vw, 2rem); }
+        p { font-size: 0.95rem; }
+
+        nav {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        nav button {
+            width: 100%;
+            min-height: 48px;
+        }
+
+        .controls {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .controls label {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 8px;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .controls input {
+            width: 100%;
+            min-width: 0;
+            margin-left: 0;
+            text-align: center;
+            font-size: 1.15rem;
+        }
+
+        .controls button {
+            width: 100%;
+            min-height: 48px;
+        }
+
+        .selected-day {
+            width: 100%;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .page {
+            padding: 12px;
+            border-radius: 16px;
+        }
+
+        .progress {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .card {
+            min-height: 48svh;
+            padding: 20px 12px;
+            align-items: center;
+        }
+
         .meta { font-size: 0.85rem; }
+        .front { font-size: clamp(1.55rem, 9vw, 2.4rem); }
         .hint { font-size: 0.85rem; }
         .answer-block { gap: 10px; }
         .back { margin-top: 18px; padding: 12px 14px; }
-        .actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
-        .actions button { width: 100%; }
-        .list-page h2 { font-size: 1.25rem; }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .actions button {
+            width: 100%;
+            min-height: 50px;
+        }
+
+        .list-page h2 { font-size: 1.25rem; text-align: center; }
+        .day-block { padding: 14px 0; }
         .day-block h3 { font-size: 1.05rem; }
         .day-block ul { padding-left: 18px; }
-        .translate-link.small { display: inline-block; margin-top: 4px; }
+        .day-block li { margin: 10px 0; line-height: 1.35; }
+        .translate-link.small { display: block; width: fit-content; margin-top: 6px; }
     }
 
     @media (max-width: 380px) {
-        .controls label { grid-template-columns: 1fr; text-align: center; }
-        .front { font-size: clamp(1.35rem, 9vw, 2rem); }
-        .card { min-height: 42svh; }
+        .front { font-size: clamp(1.3rem, 10vw, 2rem); }
+        .card { min-height: 46svh; }
     }
 "#;
