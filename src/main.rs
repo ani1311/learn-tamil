@@ -29,6 +29,22 @@ fn load_data() -> Vec<DayData> {
         .expect("data/flashcards.json should be valid flashcard data")
 }
 
+fn google_translate_url(text: &str) -> String {
+    let mut encoded = String::new();
+
+    for byte in text.bytes() {
+        match byte {
+            b'A'..=b'Z' | b'a'..=b'z' | b'0'..=b'9' | b'-' | b'_' | b'.' | b'~' => {
+                encoded.push(byte as char);
+            }
+            b' ' => encoded.push_str("%20"),
+            _ => encoded.push_str(&format!("%{byte:02X}")),
+        }
+    }
+
+    format!("https://translate.google.com/?sl=ta&tl=en&text={encoded}&op=translate")
+}
+
 fn cards_until(data: &[DayData], max_day: usize) -> Vec<Card> {
     data.iter()
         .filter(|day| day.day <= max_day)
@@ -202,12 +218,20 @@ fn FlashcardPage(
                 {move || match current_card() {
                     Some(card) => {
                         let answer = card.back.clone();
+                        let translate_url = google_translate_url(&answer);
                         view! {
                             <div>
                                 <div class="meta">{format!("Day {} · {}", card.day, card.kind)}</div>
                                 <div class="front">{card.front}</div>
                                 <div class="hint">"Click card to reveal/hide Tamil"</div>
-                                {move || show_answer.get().then(|| view! { <div class="back">{answer.clone()}</div> })}
+                                {move || show_answer.get().then(|| view! {
+                                    <div class="answer-block">
+                                        <div class="back">{answer.clone()}</div>
+                                        <a class="translate-link" href=translate_url.clone() target="_blank" rel="noopener noreferrer">
+                                            "Google Translate"
+                                        </a>
+                                    </div>
+                                })}
                             </div>
                         }.into_any()
                     },
@@ -239,14 +263,28 @@ fn ListPage(data: Arc<Vec<DayData>>, max_day: ReadSignal<usize>) -> impl IntoVie
                         <h3>{format!("Day {}: {}", day.day, day.focus)}</h3>
                         <h4>"Sentences"</h4>
                         <ul>
-                            {day.sentences.into_iter().map(|item| view! {
-                                <li><strong>{item.tamil}</strong>" = "{item.english}</li>
+                            {day.sentences.into_iter().map(|item| {
+                                let translate_url = google_translate_url(&item.tamil);
+                                view! {
+                                    <li>
+                                        <strong>{item.tamil}</strong>" = "{item.english}
+                                        " "
+                                        <a class="translate-link small" href=translate_url target="_blank" rel="noopener noreferrer">"Translate"</a>
+                                    </li>
+                                }
                             }).collect_view()}
                         </ul>
                         <h4>"Words"</h4>
                         <ul>
-                            {day.words.into_iter().map(|item| view! {
-                                <li><strong>{item.tamil}</strong>" = "{item.english}</li>
+                            {day.words.into_iter().map(|item| {
+                                let translate_url = google_translate_url(&item.tamil);
+                                view! {
+                                    <li>
+                                        <strong>{item.tamil}</strong>" = "{item.english}
+                                        " "
+                                        <a class="translate-link small" href=translate_url target="_blank" rel="noopener noreferrer">"Translate"</a>
+                                    </li>
+                                }
                             }).collect_view()}
                         </ul>
                     </article>
@@ -278,7 +316,11 @@ const STYLE: &str = r#"
     .meta { color: #64748b; font-size: 0.95rem; margin-bottom: 24px; }
     .front { font-size: clamp(2rem, 7vw, 4rem); font-weight: 800; line-height: 1.1; }
     .hint { margin-top: 22px; color: #94a3b8; }
+    .answer-block { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
     .back { margin: 26px auto 0; width: fit-content; max-width: 100%; padding: 14px 18px; border-radius: 14px; background: #dcfce7; color: #166534; font-size: 1.4rem; font-weight: 700; }
+    .translate-link { display: inline-block; border-radius: 999px; padding: 8px 12px; background: #dbeafe; color: #1d4ed8; font-size: 0.95rem; font-weight: 700; text-decoration: none; }
+    .translate-link:hover { background: #2563eb; color: white; }
+    .translate-link.small { padding: 4px 8px; font-size: 0.8rem; }
     .actions { justify-content: center; margin-top: 18px; }
     .list-page h2 { margin-top: 0; }
     .day-block { padding: 16px 0; border-top: 1px solid #e2e8f0; }
@@ -303,6 +345,8 @@ const STYLE: &str = r#"
     .app.dark .card:hover { background: #172554; border-color: #60a5fa; color: #e5e7eb; }
     .app.dark .hint { color: #64748b; }
     .app.dark .back { background: #14532d; color: #dcfce7; }
+    .app.dark .translate-link { background: #1e3a8a; color: #dbeafe; }
+    .app.dark .translate-link:hover { background: #60a5fa; color: #0f172a; }
     .app.dark .day-block { border-top-color: #334155; }
     .app.dark .day-block h4 { color: #cbd5e1; }
 
