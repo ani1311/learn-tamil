@@ -29,6 +29,22 @@ fn load_data() -> Vec<DayData> {
         .expect("data/flashcards.json should be valid flashcard data")
 }
 
+fn random_index(len: usize) -> usize {
+    if len == 0 {
+        return 0;
+    }
+
+    #[cfg(target_arch = "wasm32")]
+    {
+        (js_sys::Math::random() * len as f64).floor() as usize
+    }
+
+    #[cfg(not(target_arch = "wasm32"))]
+    {
+        0
+    }
+}
+
 fn google_translate_url(text: &str) -> String {
     let mut encoded = String::new();
 
@@ -79,7 +95,7 @@ fn App() -> impl IntoView {
 
     let (max_day, set_max_day) = signal(1usize);
     let (day_input, set_day_input) = signal("1".to_string());
-    let (card_index, set_card_index) = signal(0usize);
+    let (card_index, set_card_index) = signal(random_index(cards_until(&data, 1).len()));
     let (show_answer, set_show_answer) = signal(false);
     let (show_list, set_show_list) = signal(false);
     let (dark_mode, set_dark_mode) = signal(false);
@@ -101,9 +117,13 @@ fn App() -> impl IntoView {
         }
     };
 
-    let reset_card = move || {
-        set_card_index.set(0);
-        set_show_answer.set(false);
+    let reset_card = {
+        let current_cards = current_cards.clone();
+        move || {
+            let len = current_cards().len();
+            set_card_index.set(random_index(len));
+            set_show_answer.set(false);
+        }
     };
 
     let apply_day = move || {
@@ -191,7 +211,14 @@ fn FlashcardPage(
         move || {
             let len = current_cards().len();
             if len > 0 {
-                set_card_index.update(|index| *index = (*index + 1) % len);
+                let current = card_index.get();
+                let mut next = random_index(len);
+                if len > 1 {
+                    while next == current {
+                        next = random_index(len);
+                    }
+                }
+                set_card_index.set(next);
                 set_show_answer.set(false);
             }
         }
@@ -208,13 +235,22 @@ fn FlashcardPage(
         }
     };
 
+    let next_for_card = next.clone();
+    let next_for_show_button = next.clone();
+
     view! {
         <section class="page">
             <div class="progress">
                 {move || format!("Card {} of {}", card_index.get() + 1, total_cards())}
             </div>
 
-            <button class="card" on:click=move |_| set_show_answer.update(|show| *show = !*show)>
+            <button class="card" on:click=move |_| {
+                if show_answer.get() {
+                    next_for_card();
+                } else {
+                    set_show_answer.set(true);
+                }
+            }>
                 {move || match current_card() {
                     Some(card) => {
                         let answer = card.back.clone();
@@ -223,7 +259,7 @@ fn FlashcardPage(
                             <div>
                                 <div class="meta">{format!("Day {} · {}", card.day, card.kind)}</div>
                                 <div class="front">{card.front}</div>
-                                <div class="hint">"Click card to reveal/hide Tamil"</div>
+                                <div class="hint">"Click to reveal Tamil. Click again for next random card."</div>
                                 {move || show_answer.get().then(|| view! {
                                     <div class="answer-block">
                                         <div class="back">{answer.clone()}</div>
@@ -241,10 +277,16 @@ fn FlashcardPage(
 
             <div class="actions">
                 <button on:click=move |_| previous()>"Previous"</button>
-                <button on:click=move |_| set_show_answer.update(|show| *show = !*show)>
-                    {move || if show_answer.get() { "Hide Tamil" } else { "Show Tamil" }}
+                <button on:click=move |_| {
+                    if show_answer.get() {
+                        next_for_show_button();
+                    } else {
+                        set_show_answer.set(true);
+                    }
+                }>
+                    {move || if show_answer.get() { "Next Random" } else { "Show Tamil" }}
                 </button>
-                <button on:click=move |_| next()>"Next"</button>
+                <button on:click=move |_| next()>"Random"</button>
             </div>
         </section>
     }
@@ -296,14 +338,16 @@ fn ListPage(data: Arc<Vec<DayData>>, max_day: ReadSignal<usize>) -> impl IntoVie
 
 const STYLE: &str = r#"
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; color: #172033; }
+    html { min-height: 100%; }
+    body { min-height: 100%; margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; color: #172033; }
     button, input { font: inherit; }
-    .app { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .app { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: max(18px, env(safe-area-inset-top)) 0 max(18px, env(safe-area-inset-bottom)); }
     .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
     h1 { margin: 0 0 4px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
     p { margin: 0; color: #64748b; }
     nav, .actions { display: flex; gap: 10px; flex-wrap: wrap; }
-    button { border: 0; border-radius: 12px; padding: 10px 14px; background: #e2e8f0; color: #172033; cursor: pointer; }
+    button { border: 0; border-radius: 12px; padding: 10px 14px; min-height: 44px; background: #e2e8f0; color: #172033; cursor: pointer; }
     button:hover, button.active { background: #2563eb; color: white; }
     .controls, .page { background: white; border: 1px solid #e2e8f0; border-radius: 20px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06); }
     .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px; margin-bottom: 18px; }
@@ -311,13 +355,13 @@ const STYLE: &str = r#"
     .selected-day { color: #64748b; }
     .page { padding: 22px; }
     .progress { text-align: center; color: #64748b; margin-bottom: 14px; }
-    .card { display: block; width: 100%; min-height: 300px; padding: 34px; border: 2px dashed #cbd5e1; background: #f8fafc; color: inherit; text-align: center; }
+    .card { display: block; width: 100%; min-height: min(54vh, 420px); padding: clamp(22px, 5vw, 34px); border: 2px dashed #cbd5e1; background: #f8fafc; color: inherit; text-align: center; touch-action: manipulation; }
     .card:hover { background: #eff6ff; color: inherit; border-color: #2563eb; }
     .meta { color: #64748b; font-size: 0.95rem; margin-bottom: 24px; }
-    .front { font-size: clamp(2rem, 7vw, 4rem); font-weight: 800; line-height: 1.1; }
+    .front { font-size: clamp(1.8rem, 8vw, 4rem); font-weight: 800; line-height: 1.12; overflow-wrap: anywhere; }
     .hint { margin-top: 22px; color: #94a3b8; }
     .answer-block { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
-    .back { margin: 26px auto 0; width: fit-content; max-width: 100%; padding: 14px 18px; border-radius: 14px; background: #dcfce7; color: #166534; font-size: 1.4rem; font-weight: 700; }
+    .back { margin: 26px auto 0; width: fit-content; max-width: 100%; padding: 14px 18px; border-radius: 14px; background: #dcfce7; color: #166534; font-size: clamp(1.1rem, 5vw, 1.4rem); font-weight: 700; overflow-wrap: anywhere; }
     .translate-link { display: inline-block; border-radius: 999px; padding: 8px 12px; background: #dbeafe; color: #1d4ed8; font-size: 0.95rem; font-weight: 700; text-decoration: none; }
     .translate-link:hover { background: #2563eb; color: white; }
     .translate-link.small { padding: 4px 8px; font-size: 0.8rem; }
@@ -327,7 +371,7 @@ const STYLE: &str = r#"
     .day-block:first-of-type { border-top: 0; }
     .day-block h3 { margin: 0 0 12px; }
     .day-block h4 { margin: 12px 0 6px; color: #475569; }
-    li { margin: 6px 0; }
+    li { margin: 6px 0; overflow-wrap: anywhere; }
 
     body:has(.app.dark) { background: #000; }
     .app.dark { color: #e5e7eb; background: #000; min-height: 100vh; border-radius: 0; padding-left: 16px; padding-right: 16px; }
@@ -350,5 +394,20 @@ const STYLE: &str = r#"
     .app.dark .day-block { border-top-color: #334155; }
     .app.dark .day-block h4 { color: #cbd5e1; }
 
-    @media (max-width: 640px) { .topbar { align-items: flex-start; flex-direction: column; } nav { width: 100%; } nav button { flex: 1; } }
+    @media (max-width: 640px) {
+        .app { width: 100%; padding-left: 12px; padding-right: 12px; }
+        .topbar { align-items: stretch; flex-direction: column; gap: 14px; }
+        nav { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+        nav button:last-child { grid-column: 1 / -1; }
+        .controls { align-items: stretch; }
+        .controls label { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; width: 100%; }
+        .controls input { flex: 1; min-width: 96px; margin-left: 0; }
+        .controls button { flex: 1; }
+        .selected-day { width: 100%; text-align: center; }
+        .page { padding: 14px; border-radius: 16px; }
+        .card { min-height: 48vh; }
+        .actions { display: grid; grid-template-columns: 1fr; }
+        .actions button { width: 100%; }
+        .day-block ul { padding-left: 20px; }
+    }
 "#;
