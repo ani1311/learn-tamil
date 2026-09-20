@@ -244,13 +244,18 @@ fn FlashcardPage(
                 {move || format!("Card {} of {}", card_index.get() + 1, total_cards())}
             </div>
 
-            <button class="card" on:click=move |_| {
-                if show_answer.get() {
-                    next_for_card();
-                } else {
-                    set_show_answer.set(true);
+            <div
+                class="card"
+                role="button"
+                tabindex="0"
+                on:click=move |_| {
+                    if show_answer.get() {
+                        next_for_card();
+                    } else {
+                        set_show_answer.set(true);
+                    }
                 }
-            }>
+            >
                 {move || match current_card() {
                     Some(card) => {
                         let answer = card.back.clone();
@@ -259,11 +264,17 @@ fn FlashcardPage(
                             <div>
                                 <div class="meta">{format!("Day {} · {}", card.day, card.kind)}</div>
                                 <div class="front">{card.front}</div>
-                                <div class="hint">"Click to reveal Tamil. Click again for next random card."</div>
+                                <div class="hint">"Tap to reveal Tamil. Tap again for next random card."</div>
                                 {move || show_answer.get().then(|| view! {
                                     <div class="answer-block">
                                         <div class="back">{answer.clone()}</div>
-                                        <a class="translate-link" href=translate_url.clone() target="_blank" rel="noopener noreferrer">
+                                        <a
+                                            class="translate-link"
+                                            href=translate_url.clone()
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            on:click=move |ev| ev.stop_propagation()
+                                        >
                                             "Google Translate"
                                         </a>
                                     </div>
@@ -273,7 +284,7 @@ fn FlashcardPage(
                     },
                     None => view! { <div>"No cards available."</div> }.into_any(),
                 }}
-            </button>
+            </div>
 
             <div class="actions">
                 <button on:click=move |_| previous()>"Previous"</button>
@@ -338,34 +349,34 @@ fn ListPage(data: Arc<Vec<DayData>>, max_day: ReadSignal<usize>) -> impl IntoVie
 
 const STYLE: &str = r#"
     * { box-sizing: border-box; }
-    html { min-height: 100%; }
-    body { min-height: 100%; margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; color: #172033; }
+    html { min-height: 100%; overflow-x: hidden; }
+    body { min-height: 100%; margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; color: #172033; overflow-x: hidden; }
     button, input { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    .app { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: max(18px, env(safe-area-inset-top)) 0 max(18px, env(safe-area-inset-bottom)); }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
-    h1 { margin: 0 0 4px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    button, a, .card { -webkit-tap-highlight-color: transparent; }
+    .app { width: min(960px, 100%); margin: 0 auto; padding: max(16px, env(safe-area-inset-top)) 16px max(18px, env(safe-area-inset-bottom)); }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 16px; }
+    h1 { margin: 0 0 4px; font-size: clamp(1.55rem, 6vw, 2.6rem); line-height: 1.05; }
     p { margin: 0; color: #64748b; }
     nav, .actions { display: flex; gap: 10px; flex-wrap: wrap; }
     button { border: 0; border-radius: 12px; padding: 10px 14px; min-height: 44px; background: #e2e8f0; color: #172033; cursor: pointer; }
     button:hover, button.active { background: #2563eb; color: white; }
     .controls, .page { background: white; border: 1px solid #e2e8f0; border-radius: 20px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06); }
-    .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px; margin-bottom: 18px; }
-    .controls input { width: 84px; margin-left: 8px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 10px; }
+    .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px; margin-bottom: 14px; }
+    .controls input { width: 84px; margin-left: 8px; padding: 10px; min-height: 44px; border: 1px solid #cbd5e1; border-radius: 10px; }
     .selected-day { color: #64748b; }
-    .page { padding: 22px; }
-    .progress { text-align: center; color: #64748b; margin-bottom: 14px; }
-    .card { display: block; width: 100%; min-height: min(54vh, 420px); padding: clamp(22px, 5vw, 34px); border: 2px dashed #cbd5e1; background: #f8fafc; color: inherit; text-align: center; touch-action: manipulation; }
+    .page { padding: clamp(14px, 4vw, 22px); }
+    .progress { text-align: center; color: #64748b; margin-bottom: 12px; }
+    .card { display: flex; align-items: center; justify-content: center; width: 100%; min-height: min(52svh, 420px); padding: clamp(18px, 5vw, 34px); border: 2px dashed #cbd5e1; border-radius: 12px; background: #f8fafc; color: inherit; text-align: center; touch-action: manipulation; cursor: pointer; }
     .card:hover { background: #eff6ff; color: inherit; border-color: #2563eb; }
-    .meta { color: #64748b; font-size: 0.95rem; margin-bottom: 24px; }
-    .front { font-size: clamp(1.8rem, 8vw, 4rem); font-weight: 800; line-height: 1.12; overflow-wrap: anywhere; }
-    .hint { margin-top: 22px; color: #94a3b8; }
+    .meta { color: #64748b; font-size: 0.95rem; margin-bottom: clamp(16px, 4vw, 24px); }
+    .front { font-size: clamp(1.55rem, 8vw, 4rem); font-weight: 800; line-height: 1.12; overflow-wrap: anywhere; }
+    .hint { margin-top: clamp(16px, 4vw, 22px); color: #94a3b8; font-size: 0.95rem; }
     .answer-block { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
     .back { margin: 26px auto 0; width: fit-content; max-width: 100%; padding: 14px 18px; border-radius: 14px; background: #dcfce7; color: #166534; font-size: clamp(1.1rem, 5vw, 1.4rem); font-weight: 700; overflow-wrap: anywhere; }
     .translate-link { display: inline-block; border-radius: 999px; padding: 8px 12px; background: #dbeafe; color: #1d4ed8; font-size: 0.95rem; font-weight: 700; text-decoration: none; }
     .translate-link:hover { background: #2563eb; color: white; }
     .translate-link.small { padding: 4px 8px; font-size: 0.8rem; }
-    .actions { justify-content: center; margin-top: 18px; }
+    .actions { justify-content: center; margin-top: 14px; }
     .list-page h2 { margin-top: 0; }
     .day-block { padding: 16px 0; border-top: 1px solid #e2e8f0; }
     .day-block:first-of-type { border-top: 0; }
@@ -395,19 +406,33 @@ const STYLE: &str = r#"
     .app.dark .day-block h4 { color: #cbd5e1; }
 
     @media (max-width: 640px) {
-        .app { width: 100%; padding-left: 12px; padding-right: 12px; }
-        .topbar { align-items: stretch; flex-direction: column; gap: 14px; }
-        nav { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+        .app { width: 100%; padding-left: 10px; padding-right: 10px; }
+        .topbar { align-items: stretch; flex-direction: column; gap: 12px; text-align: center; }
+        nav { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        nav button { width: 100%; padding-left: 8px; padding-right: 8px; }
         nav button:last-child { grid-column: 1 / -1; }
-        .controls { align-items: stretch; }
-        .controls label { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; width: 100%; }
-        .controls input { flex: 1; min-width: 96px; margin-left: 0; }
-        .controls button { flex: 1; }
-        .selected-day { width: 100%; text-align: center; }
-        .page { padding: 14px; border-radius: 16px; }
-        .card { min-height: 48vh; }
-        .actions { display: grid; grid-template-columns: 1fr; }
+        .controls { align-items: stretch; gap: 10px; padding: 12px; }
+        .controls label { display: grid; grid-template-columns: auto minmax(72px, 1fr) auto; align-items: center; gap: 8px; width: 100%; }
+        .controls input { width: 100%; min-width: 0; margin-left: 0; }
+        .controls button { width: 100%; }
+        .selected-day { width: 100%; text-align: center; font-size: 0.95rem; }
+        .page { padding: 12px; border-radius: 16px; }
+        .card { min-height: 44svh; padding: 18px 12px; }
+        .meta { font-size: 0.85rem; }
+        .hint { font-size: 0.85rem; }
+        .answer-block { gap: 10px; }
+        .back { margin-top: 18px; padding: 12px 14px; }
+        .actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
         .actions button { width: 100%; }
-        .day-block ul { padding-left: 20px; }
+        .list-page h2 { font-size: 1.25rem; }
+        .day-block h3 { font-size: 1.05rem; }
+        .day-block ul { padding-left: 18px; }
+        .translate-link.small { display: inline-block; margin-top: 4px; }
+    }
+
+    @media (max-width: 380px) {
+        .controls label { grid-template-columns: 1fr; text-align: center; }
+        .front { font-size: clamp(1.35rem, 9vw, 2rem); }
+        .card { min-height: 42svh; }
     }
 "#;
